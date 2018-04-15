@@ -17,9 +17,9 @@ class AddForeignKeysToPreOrdersTable extends Migration
             function (Blueprint $table) {
                 $table->foreign('category_id', 'fk_pre_orders_categories1')->references('id')->on('categories')
                       ->onUpdate('NO ACTION')->onDelete('NO ACTION');
-                $table->foreign('purchase_from', 'fk_pre_orders_countries1')->references('id')->on('countries')
+                $table->foreign('purchase_from_id', 'fk_pre_orders_countries1')->references('id')->on('countries')
                       ->onUpdate('NO ACTION')->onDelete('NO ACTION');
-                $table->foreign('deal_in', 'fk_pre_orders_countries2')->references('id')->on('countries')
+                $table->foreign('deal_in_id', 'fk_pre_orders_countries2')->references('id')->on('countries')
                       ->onUpdate('NO ACTION')->onDelete('NO ACTION');
                 $table->foreign('user_id', 'fk_pre_orders_users1')->references('id')->on('users')->onUpdate('NO ACTION')
                       ->onDelete('NO ACTION');

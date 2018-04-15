@@ -15,7 +15,7 @@ class AddForeignKeysToVariantsTable extends Migration
     {
         Schema::table('variants',
             function (Blueprint $table) {
-                $table->foreign('pre_orders_id', 'fk_variants_pre_orders1')->references('id')->on('pre_orders')
+                $table->foreign('pre_order_id', 'fk_variants_pre_orders1')->references('id')->on('pre_orders')
                       ->onUpdate('NO ACTION')->onDelete('NO ACTION');
             });
     }

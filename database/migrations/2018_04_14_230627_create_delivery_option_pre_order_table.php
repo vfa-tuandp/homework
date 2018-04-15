@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDeliveryOptionsPreOrdersTable extends Migration
+class CreateDeliveryOptionPreOrderTable extends Migration
 {
 
     /**
@@ -13,12 +13,12 @@ class CreateDeliveryOptionsPreOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('delivery_options_pre_orders',
+        Schema::create('delivery_option_pre_order',
             function (Blueprint $table) {
                 $table->integer('id')->primary();
-                $table->integer('delivery_options_id')
+                $table->integer('delivery_option_id')
                       ->index('fk_delivery_options_has_pre_orders_delivery_options1_idx');
-                $table->integer('pre_orders_id')->index('fk_delivery_options_has_pre_orders_pre_orders1_idx');
+                $table->integer('pre_order_id')->index('fk_delivery_options_has_pre_orders_pre_orders1_idx');
                 $table->float('cost', 10, 0)->nullable();
                 $table->timestamps();
             });
@@ -32,7 +32,7 @@ class CreateDeliveryOptionsPreOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('delivery_options_pre_orders');
+        Schema::drop('delivery_option_pre_order');
     }
 
 }

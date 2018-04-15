@@ -19,8 +19,8 @@ class CreatePreOrdersTable extends Migration
                 $table->string('title')->nullable();
                 $table->string('brand')->nullable();
                 $table->float('price', 10, 0)->nullable();
-                $table->integer('purchase_from')->index('fk_pre_orders_countries1_idx');
-                $table->integer('deal_in')->index('fk_pre_orders_countries2_idx');
+                $table->integer('purchase_from_id')->index('fk_pre_orders_countries1_idx');
+                $table->integer('deal_in_id')->index('fk_pre_orders_countries2_idx');
                 $table->integer('category_id')->index('fk_pre_orders_categories1_idx');
                 $table->integer('user_id')->index('fk_pre_orders_users1_idx');
                 $table->dateTime('close_at')->nullable();

@@ -16,7 +16,7 @@ class CreateVariantsTable extends Migration
         Schema::create('variants',
             function (Blueprint $table) {
                 $table->integer('id')->primary();
-                $table->integer('pre_orders_id')->index('fk_variants_pre_orders1_idx');
+                $table->integer('pre_order_id')->index('fk_variants_pre_orders1_idx');
                 $table->string('variant')->nullable();
                 $table->string('sub_variant')->nullable();
                 $table->float('price', 10, 0)->nullable();
